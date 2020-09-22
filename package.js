@@ -6,28 +6,30 @@ Package.describe({
 })
 
 Package.on_use(function (api) {
-	api.use(['session@1.0.0',
-		'spacebars@1.0.0',
-		'stylus@1.0.0 || 2.0.0',
-		'accounts-base@1.0.0',
-		'underscore@1.0.0',
-		'templating@1.0.0',
-		'anti:i18n@0.4.3'
+	api.versionsFrom('METEOR@1.10.2');
+
+	api.use(['session',
+		'spacebars',
+		'stylus',
+		'accounts-base',
+		'underscore',
+		'templating',
+		'anti:i18n'
 		],'client')
 
 	api.imply('accounts-base', ['client', 'server']);
 
 	// Allows the user of this package to choose their own Bootstrap
 	// implementation.
-	api.use(['twbs:bootstrap@3.3.1',
-					'nemo64:bootstrap@3.3.1_1'],
+	api.use(['twbs:bootstrap',
+					'nemo64:bootstrap'],
 					'client', {weak: true});
 	// Allows us to call Accounts.oauth.serviceNames, if there are any OAuth
 	// services.
-	api.use('accounts-oauth@1.0.0', {weak: true});
+	api.use('accounts-oauth', {weak: true});
 	// Allows us to directly test if accounts-password (which doesn't use
 	// Accounts.oauth.registerService) exists.
-	api.use('accounts-password@1.0.0', {weak: true});
+	api.use('accounts-password', {weak: true});
 
 	api.add_files([
 		'accounts_ui.js',
