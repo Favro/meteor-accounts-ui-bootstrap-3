@@ -5,8 +5,8 @@ Package.describe({
 	git: "https://github.com/ianmartorell/meteor-accounts-ui-bootstrap-3"
 })
 
-Package.on_use(function (api) {
-	api.versionsFrom('METEOR@1.10.2');
+Package.onUse(function (api) {
+	api.versionsFrom('METEOR@2.3');
 
 	api.use(['session',
 		'spacebars',
@@ -31,7 +31,7 @@ Package.on_use(function (api) {
 	// Accounts.oauth.registerService) exists.
 	api.use('accounts-password', {weak: true});
 
-	api.add_files([
+	api.addFiles([
 		'accounts_ui.js',
 
 		// translations
