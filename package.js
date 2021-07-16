@@ -10,7 +10,6 @@ Package.onUse(function (api) {
 
 	api.use(['session',
 		'spacebars',
-		'stylus',
 		'accounts-base',
 		'underscore',
 		'templating',
@@ -79,7 +78,7 @@ Package.onUse(function (api) {
 		'login_buttons_single.js',
 		'login_buttons_dropdown.js',
 		'login_buttons_dialogs.js',
-		'accounts_ui.styl'
+		'accounts_ui.css'
 		], 'client')
 
 	api.export('accountsUIBootstrap3', 'client')
